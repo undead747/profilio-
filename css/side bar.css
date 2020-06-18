@@ -1,0 +1,269 @@
+/*================= 
+     Default setting
+  =================*/
+*{
+    padding: 0;
+    margin: 0;
+}
+
+*,*:before,*:after{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+    font-size: 1.125rem;
+    font-weight: 300;
+}
+
+body, html {
+    height: 100%;
+    scroll-behavior: smooth;
+  }
+
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+h1,
+h2,
+h3{
+   font-family: 'Lora', serif;
+   font-weight: 400;
+}
+
+h1{
+    font-size: 2rem;
+}
+
+
+img{
+    width: 100%;
+    display: block;
+}
+
+/*================= 
+     Header  
+  =================*/
+
+.header-top{
+    position: fixed;
+    max-width: 100%;
+    padding-top: .7em;
+}
+
+.header-top-default{
+    background: rgb(38,38,38, 0);
+    transition: .5s linear;
+}
+
+.header-top-scroll{
+    background: rgb(38,38,38, 0.5);
+    transition: .5s linear;
+}
+
+
+/*================= 
+     Header Logo 
+  =================*/
+.site-title{
+    padding: .2em;
+    padding-left: 2em;
+    text-align: center;
+    color: white;
+}
+
+
+.subtitle{
+    font-weight: 700;
+    font-size: .75rem;
+    color: #d7dce0;
+}
+
+/*================= 
+     Side Bar 
+  =================*/
+.side-bar{
+    margin-right: 2em;
+}
+
+.side-bar ul{
+    display: flex;
+    justify-content: center ;
+}
+
+.side-bar li{
+    margin: 0 1em;
+}
+
+.side-bar a{
+    font-weight: 520;
+    color: #e4e3e3;
+    font-size: 1rem;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 0.5s ease-in-out infinite alternate;
+}
+
+.side-bar a:hover,
+.side-bar a:focus {
+    /* color: #ffffff; */
+    color: #ffffff;
+    text-shadow: 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffffff;
+    transition: .5s linear;
+}
+
+/*================= 
+     Burger 
+  =================*/
+.burger div{
+    width: 25px;
+    height: 5px;
+    background-color: rgb(181, 177, 177);
+    margin: 5px;
+}
+
+.burger{
+    display: none;
+    margin-right: .5em;
+}
+
+/*====================== 
+     Reponsive Side Bar  
+  ======================*/
+@media screen and (max-width:768px){
+
+.side-bar{
+    margin-right: 0;
+}
+
+.side-bar{
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 40vw;
+    background-color: black;
+    transform: translateX(100%);
+}
+
+.side-bar ul{
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.side-bar li{
+    height: 5vh;
+}
+.side-bar li:hover,
+.side-bar li:focus{
+    border-bottom: 0.1px solid snow;
+    transition: .5s linear;
+}
+
+.burger{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+.side-bar-active{
+    transform: translateX(0%);
+}
+
+.side-bar-animation{
+    transition: transform 0.5s ease-in;
+}
+
+
+}
+
+/*================= 
+     Flex Side Bar
+  =================*/
+
+.header-top{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/*================= 
+     Banner
+  =================*/
+.banner{
+    background-image: url('../img/alex-knight-Ys-DBJeX0nE-unsplash.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat; 
+    height: 100vh;
+}
+
+/*================= 
+     Banner Title
+  =================*/
+.banner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner span{
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.banner-header{
+    margin-top: 5em;
+    color: #ffffff;
+    font-size: 3rem;
+    letter-spacing: 8px;
+    animation: banner 3s 1;
+}
+
+.banner-text{
+    font-size: 1.5rem;
+    color: #ffffff;
+    animation: banner-text 3s 1;
+}
+
+@keyframes banner {
+    0%{
+        color: black;
+        margin-bottom: -2em;
+      }
+      30%{
+        letter-spacing: 25px;
+        margin-bottom: -2em;
+      }
+      85%{
+        letter-spacing: 8px;
+        margin-bottom: -2em;
+      }
+  }
+
+  @keyframes banner-text{
+	0%{
+		opacity: 0;
+    }
+	85%{
+		opacity:0;
+	}
+	95%{
+	    opacity:100%;	
+	}
+}  
